@@ -5,13 +5,13 @@
 
 ## Repository layout
 - `backend/`: FastAPI + SQLite 기반 Todo API 구현 영역
-- `frontend/`: React 기반 UI 영역 (나중에 구현)
+- `frontend/`: React + Vite UI (구현 완료); `e2e/` 에 Playwright E2E 테스트 포함
 - `references/`: 공통 frozen spec
 - `.claude/rules/`: repo 공통 작업 규칙
 
 ## Current execution scope
-- 지금 작업 대상은 `backend/`만입니다.
-- `frontend/`는 구조만 두고 현재 구현하지 않습니다.
+- `backend/`: FastAPI Todo API (구현 완료)
+- `frontend/`: React UI (구현 완료) + Playwright E2E (추가됨)
 
 ## Source of truth
 - Spec: `references/spec.md`
@@ -31,7 +31,9 @@
 - `backend/app/`: API, models, persistence
 - `backend/tests/`: unit / integration tests
 - `backend/pyproject.toml`: backend package metadata
-- `frontend/`: future React app
+- `frontend/src/`: React components and API client
+- `frontend/e2e/`: Playwright E2E tests
+- `frontend/playwright.config.js`: Playwright config (webServer auto-starts backend + frontend)
 - `references/`: frozen spec copy
 
 ## Commands (backend)
@@ -42,9 +44,16 @@
 - Run backend tests: `cd backend && uv run pytest -q`
 - Run backend app: `cd backend && uv run uvicorn app.main:app --reload`
 
+## Commands (frontend)
+- Install deps: `cd frontend && npm install`
+- Run dev server: `cd frontend && npm run dev`
+- Build: `cd frontend && npm run build`
+- Run E2E tests: `cd frontend && npm run test:e2e`
+
 ## Non-negotiables
 - TDD first: test -> fail -> implement -> pass -> refactor
-- pytest only, not unittest
+- Backend tests: pytest only, not unittest
+- E2E tests: Playwright (collocated under `frontend/e2e/`)
 - Keep commits small: one feature per commit
 - Stop and ask before risky actions (delete, force push, deploy)
 - If implementation pressure conflicts with spec, stop and return to spec review

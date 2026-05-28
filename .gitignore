@@ -28,6 +28,8 @@ env/
 .coverage
 htmlcov/
 *.xml
+test-results/
+playwright-report/
 
 # Node / frontend
 node_modules/

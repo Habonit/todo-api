@@ -1,0 +1,66 @@
+.page {
+  width: 100%;
+  max-width: 520px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.inputArea {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(239, 68, 68, 0.06);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.15);
+  font-size: 13px;
+  color: var(--danger);
+}
+
+.dismissBtn {
+  font-size: 12px;
+  color: var(--danger);
+  opacity: 0.7;
+  flex-shrink: 0;
+  padding: 2px 4px;
+}
+
+.dismissBtn:hover {
+  opacity: 1;
+}
+
+.loading {
+  padding: 48px 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}

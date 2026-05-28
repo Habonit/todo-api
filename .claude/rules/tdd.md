@@ -1,0 +1,11 @@
+# TDD 규칙 (필수, 예외 없음)
+- 테스트 먼저 작성 → 실패 확인(red) → 구현(green) → 리팩터(refactor).
+- 프레임워크: pytest (필수). unittest 쓰지 않음.
+- 기준 문서: 루트 `references/`의 확정된 spec. 그 spec대로 테스트를 먼저 짠다.
+- 현재 구현 범위는 `backend/`만이다. 테스트와 구현 파일도 우선 `backend/` 아래에 둔다.
+- Python 패키지/venv/실행은 `uv` 기준으로 관리한다.
+- 테스트 피라미드 비율 준수:
+  - unit: 가장 많이 (빠르고 격리됨)
+  - integration: 중간 (컴포넌트 간, pytest)
+  - e2e: 가장 적게 (playwright, 느리고 비쌈)
+- 커버리지보다 의미 있는 테스트 우선. 행동(behavior) 검증 중심.
